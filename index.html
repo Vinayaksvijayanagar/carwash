@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<header class="header">
-    <img src="logo.png" alt="FOAMAN Auto Care Logo" class="logo">
-    <p>Premium Car Wash Creams & Auto Care Products</p>
-</header>
-
+<head>
+    <meta charset="UTF-8">
+    <title>FOAMAN Auto Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<header>
-    <h1>🚗 CarWash Pro</h1>
-    <p>Premium Car Wash Creams & Care Products</p>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <img src="logo.png" class="nav-logo" alt="FOAMAN Logo">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Book</a></li>
+    </ul>
+</nav>
 
-<section class="products" id="productList">
-    <!-- Products loaded dynamically -->
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Premium Auto Care Products</h1>
+        <p>Professional Car Wash Creams & Detailing Solutions</p>
+        <a href="#products" class="btn">Explore Products</a>
+    </div>
 </section>
 
-<footer>
-    <p>© 2025 CarWash Pro | All Rights Reserved</p>
-</footer>
+<!-- PRODUCTS -->
+<section class="products" id="products"></section>
+
+<!-- MODAL -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <span id="modalPrice"></span>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Book Your Car Wash</h2>
+    <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20book%20FOAMAN%20Car%20Wash"
+       target="_blank"
+       class="whatsapp-btn">
+       📲 Book via WhatsApp
+    </a>
+</section>
+
+<footer>© 2025 FOAMAN Auto Care</footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+
