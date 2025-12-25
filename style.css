@@ -39,51 +39,69 @@ body {
     font-weight: 500;
 }
 
-/* HERO */
+/* HERO – FIXED */
 .hero {
-    min-height: 90vh;
-    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
+    height: 70vh; /* REDUCED */
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
         center/cover no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 8%;
 }
 
 .hero-content {
-    background: rgba(0,0,0,0.65);
-    padding: 45px;
-    border-radius: 18px;
+    max-width: 700px;
     text-align: center;
-    max-width: 520px;
 }
 
 .hero h1 {
-    font-size: 2.4rem;
-    margin-bottom: 12px;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.05rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.95;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
+    padding: 14px 36px;
+    font-size: 1.05rem;
     background: #00ffcc;
     color: #000;
-    border-radius: 30px;
+    border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,255,204,0.3);
 }
 
-/* PRODUCTS – PORTFOLIO STYLE */
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    padding: 60px 10% 20px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    opacity: 0.8;
+}
+
+/* PRODUCTS – PORTFOLIO */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 40px;
-    padding: 70px 8%;
+    padding: 40px 8% 70px;
 }
 
 .card {
@@ -156,48 +174,22 @@ body {
     margin-bottom: 15px;
 }
 
-.modal-content h2 {
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-}
-
-.modal-content p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.modal-content span {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #009f88;
-}
-
 .close {
     float: right;
-    cursor: pointer;
     font-size: 22px;
+    cursor: pointer;
 }
 
 /* CONTACT */
 .contact {
+    background: #000;
     text-align: center;
     padding: 60px 20px;
-    background: #000;
-}
-
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.contact p {
-    opacity: 0.8;
-    margin-bottom: 20px;
 }
 
 .whatsapp-btn {
     background: #25D366;
-    color: #fff;
+    color: white;
     padding: 15px 35px;
     border-radius: 30px;
     font-size: 18px;
@@ -206,9 +198,9 @@ body {
 
 /* FOOTER */
 footer {
+    background: #000;
     text-align: center;
     padding: 15px;
-    background: #000;
     opacity: 0.8;
 }
 
@@ -218,15 +210,17 @@ footer {
     to { opacity: 1; }
 }
 
-/* RESPONSIVE */
-@media(max-width: 600px) {
+/* MOBILE */
+@media(max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
     .card {
         flex-direction: column;
         text-align: center;
-    }
-
-    .card img {
-        margin-bottom: 10px;
     }
 }
 
