@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #0d0d0d;
+    color: #f2f2f2;
 }
 
 /* NAVBAR */
@@ -10,85 +15,117 @@
     position: sticky;
     top: 0;
     background: #000;
+    padding: 12px 8%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 12px 30px;
+    align-items: center;
     z-index: 1000;
 }
 
 .nav-logo {
-    width: 140px;
+    width: 150px;
     animation: fadeIn 1.5s ease;
 }
 
 .navbar ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    list-style: none;
+    gap: 25px;
 }
 
 .navbar a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-weight: 500;
 }
 
 /* HERO */
 .hero {
-    height: 90vh;
+    min-height: 90vh;
     background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
         center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
 }
 
 .hero-content {
-    background: rgba(0,0,0,0.6);
-    padding: 40px;
-    border-radius: 15px;
+    background: rgba(0,0,0,0.65);
+    padding: 45px;
+    border-radius: 18px;
+    text-align: center;
+    max-width: 520px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    opacity: 0.9;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
+    margin-top: 20px;
+    padding: 12px 30px;
     background: #00ffcc;
-    color: black;
-    text-decoration: none;
+    color: #000;
     border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* PRODUCTS */
+/* PRODUCTS – PORTFOLIO STYLE */
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 50px;
-    justify-content: center;
-    background: #111;
-    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    padding: 70px 8%;
 }
 
 .card {
-    width: 260px;
-    background: #000;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.4s;
+    display: flex;
+    gap: 20px;
+    background: #111;
+    border-radius: 20px;
+    padding: 25px;
+    align-items: center;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.08);
+    transform: translateY(-6px);
 }
 
 .card img {
-    width: 100%;
-    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background: #000;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin-bottom: 8px;
+}
+
+.card span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00ffcc;
 }
 
 /* MODAL */
@@ -97,50 +134,82 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.7);
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: white;
-    color: black;
+    background: #fff;
+    color: #000;
+    width: 90%;
+    max-width: 420px;
     padding: 25px;
-    width: 300px;
-    border-radius: 15px;
+    border-radius: 18px;
     text-align: center;
 }
 
 .modal-content img {
     width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.modal-content span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #009f88;
 }
 
 .close {
     float: right;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* CONTACT */
 .contact {
     text-align: center;
-    padding: 40px;
+    padding: 60px 20px;
+    background: #000;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    opacity: 0.8;
+    margin-bottom: 20px;
 }
 
 .whatsapp-btn {
-    display: inline-block;
     background: #25D366;
-    color: white;
-    padding: 15px 30px;
+    color: #fff;
+    padding: 15px 35px;
     border-radius: 30px;
-    text-decoration: none;
     font-size: 18px;
+    text-decoration: none;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 15px;
-    background: black;
-    color: white;
+    background: #000;
+    opacity: 0.8;
 }
 
 /* ANIMATION */
@@ -148,3 +217,16 @@ footer {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; }
 }
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card img {
+        margin-bottom: 10px;
+    }
+}
+
