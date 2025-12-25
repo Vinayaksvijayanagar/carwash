@@ -4,11 +4,14 @@
 }
 
 .logo {
-    width: 220px;
-    max-width: 90%;
-    margin-bottom: 15px;
-    transition: transform 0.4s ease;
+    width: 100%;
+    max-width: 320px;   /* Controls logo size */
+    height: auto;       /* Prevents stretching */
+    object-fit: contain;/* Fits logo fully */
+    display: block;
+    margin: 0 auto 15px;
 }
+
 
 .logo:hover {
     transform: scale(1.05) rotateZ(-1deg);
