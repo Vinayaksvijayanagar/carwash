@@ -1,16 +1,16 @@
 .header {
-    text-align: center;
-    padding: 40px 20px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .logo {
-    width: 100%;
-    max-width: 320px;   /* Controls logo size */
-    height: auto;       /* Prevents stretching */
-    object-fit: contain;/* Fits logo fully */
-    display: block;
-    margin: 0 auto 15px;
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
 }
+
 
 
 .logo:hover {
