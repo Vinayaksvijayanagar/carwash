@@ -2,115 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FOAMAN | Car Care Products</title>
+<title>FOAMAN Auto Care</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Scroll Progress -->
-<div id="progressBar"></div>
+<h1 class="title">FOAMAN Auto Care Products</h1>
 
-<!-- Navbar -->
-<header class="navbar">
-  <div class="logo">
-    <img src="logo.png">
-    <div>
-      <h2>FOAMAN</h2>
-      <small>Professional Car Care</small>
-    </div>
-  </div>
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#founders">Founders</a>
-    <a href="#contact">Enquiry</a>
-  </nav>
-</header>
+<section class="products">
 
-<!-- Hero -->
-<section class="hero reveal">
-  <div class="hero-box">
-    <h1>Premium Car Wash Products</h1>
-    <p>Trusted by professionals</p>
+  <!-- Dash Shine Pro -->
+  <div class="card" onclick="openProduct(
+    'Dash Shine Pro',
+    'Car & Bike Dashboard Polish',
+    ['images/dash-shine-1.png','images/dash-shine-2.png']
+  )">
+    <img src="images/dash-shine-1.png">
+    <h3>Dash Shine Pro</h3>
   </div>
+
+  <!-- Thick & Slick Foam Shampoo -->
+  <div class="card" onclick="openProduct(
+    'Thick & Slick Foam Shampoo',
+    'Car & Bike Foam Shampoo',
+    ['images/thick-slick-1.png','images/thick-slick-2.png']
+  )">
+    <img src="images/thick-slick-1.png">
+    <h3>Thick & Slick Foam Shampoo</h3>
+  </div>
+
+  <!-- All Purpose Degreaser -->
+  <div class="card" onclick="openProduct(
+    'All Purpose Degreaser',
+    'Car & Bike Cleaner & Degreaser',
+    ['images/all-purpose-1.png','images/all-purpose-2.png']
+  )">
+    <img src="images/all-purpose-1.png">
+    <h3>All Purpose Degreaser</h3>
+  </div>
+
+  <!-- Tyre Shine Pro -->
+  <div class="card" onclick="openProduct(
+    'Tyre Shine Pro',
+    'Car & Bike Tyre Shiner',
+    ['images/tyre-shine-1.png','images/tyre-shine-2.png']
+  )">
+    <img src="images/tyre-shine-1.png">
+    <h3>Tyre Shine Pro</h3>
+  </div>
+
 </section>
 
-<!-- Products -->
-<section id="products" class="section reveal">
-<h2>Our Products</h2>
-
-<div class="product-grid">
-  <div class="product-card" onclick="openProduct('Foam Shampoo','₹499','High foam deep cleaning')">
-    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c7">
-    <h3>Foam Shampoo</h3>
-  </div>
-
-  <div class="product-card" onclick="openProduct('Interior Cleaner','₹699','Safe interior cleaner')">
-    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068">
-    <h3>Interior Cleaner</h3>
-  </div>
-
-  <div class="product-card" onclick="openProduct('Wax Polish','₹999','Long lasting shine')">
-    <img src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e">
-    <h3>Wax Polish</h3>
-  </div>
-</div>
-</section>
-
-<!-- Product Modal -->
-<div class="modal" id="productModal">
+<!-- PRODUCT MODAL -->
+<div class="modal" id="modal">
   <div class="modal-box">
-    <span onclick="closeModal()">✖</span>
+    <span class="close" onclick="closeModal()">✖</span>
+
+    <img id="mainImg">
+
+    <div class="thumbs">
+      <img onclick="swapImg(this.src)">
+      <img onclick="swapImg(this.src)">
+    </div>
+
     <h2 id="pName"></h2>
     <p id="pDesc"></p>
-    <strong id="pPrice"></strong>
+
     <a id="orderBtn" target="_blank">Order via WhatsApp</a>
   </div>
 </div>
 
-<!-- Reviews -->
-<section id="reviews" class="section dark reveal">
-<h2>Customer Reviews</h2>
-<div class="review-box" id="reviewText"></div>
-</section>
-
-<!-- Founders -->
-<section id="founders" class="section reveal">
-<h2>Our Founders</h2>
-<div class="founder-grid">
-  <div class="founder-card">
-    <img src="https://randomuser.me/api/portraits/men/45.jpg">
-    <h3>Vinayak S V</h3>
-    <p>Founder & CEO</p>
-    <p>📞 +91 9XXXXXXXXX</p>
-  </div>
-  <div class="founder-card">
-    <img src="https://randomuser.me/api/portraits/men/32.jpg">
-    <h3>Prateek Kumar</h3>
-    <p>Operations Head</p>
-    <p>📞 +91 8XXXXXXXXX</p>
-  </div>
-</div>
-</section>
-
-<!-- Enquiry -->
-<section id="contact" class="section dark reveal">
-<h2>Enquiry</h2>
-<form action="mailto:foamanofficial@gmail.com" method="post" enctype="text/plain">
-  <input type="text" name="Name" placeholder="Your Name" required>
-  <input type="email" name="Email" placeholder="Your Email" required>
-  <textarea name="Message" placeholder="Your enquiry"></textarea>
-  <button type="submit">Send</button>
-</form>
-</section>
-
-<footer>© 2025 FOAMAN | All Rights Reserved</footer>
-
-<!-- Floating Buttons -->
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">💬</a>
-<button id="topBtn">⬆</button>
-
 <script src="script.js"></script>
 </body>
 </html>
+
