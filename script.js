@@ -38,26 +38,55 @@ setInterval(()=>{
  i=(i+1)%reviews.length;
 },3000);
 
-const topBtn=document.getElementById("topBtn");
-window.addEventListener("scroll",()=>{
- topBtn.style.display=window.scrollY>400?"block":"none";
+document.addEventListener("DOMContentLoaded", () => {
+
+  const heroSlides = [
+    {
+      img: "images/adv-1.png",
+      title: "Aesthetic Interior Care",
+      desc: "Restore shine and elegance to every dashboard"
+    },
+    {
+      img: "images/adv-2.png",
+      title: "Elegant Exterior Finish",
+      desc: "Professional detailing for premium vehicles"
+    },
+    {
+      img: "images/adv-3.png",
+      title: "Thick & Slick Foam Wash",
+      desc: "High-foaming formula for deep cleaning"
+    }
+  ];
+
+  let index = 0;
+  const hero = document.getElementById("hero");
+  const heroTitle = document.getElementById("heroTitle");
+  const heroDesc = document.getElementById("heroDesc");
+
+  function updateHero(){
+    hero.style.opacity = "0";
+
+    setTimeout(() => {
+      hero.style.backgroundImage = `url('${heroSlides[index].img}')`;
+      heroTitle.textContent = heroSlides[index].title;
+      heroDesc.textContent = heroSlides[index].desc;
+
+      hero.style.opacity = "1";
+      index = (index + 1) % heroSlides.length;
+    }, 500);
+  }
+
+  // first load
+  updateHero();
+
+  let interval = setInterval(updateHero, 4000);
+
+  // pause on hover
+  hero.addEventListener("mouseenter", () => clearInterval(interval));
+  hero.addEventListener("mouseleave", () => {
+    interval = setInterval(updateHero, 4000);
+  });
+
 });
-topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-const heroImages = [
-  "images/adv-1.png",
-  "images/adv-2.png",
-  "images/adv-3.png"
-];
-
-let heroIndex = 0;
-const hero = document.getElementById("hero");
-
-// initial background
-hero.style.backgroundImage = `url(${heroImages[0]})`;
-
-setInterval(() => {
-  heroIndex = (heroIndex + 1) % heroImages.length;
-  hero.style.backgroundImage = `url(${heroImages[heroIndex]})`;
-}, 4000); // change every 4 seconds
 
 
