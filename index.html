@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FOAMAN | Car Care Solutions</title>
+<title>FOAMAN | Car Care Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- Scroll Progress -->
+<div id="progressBar"></div>
+
+<!-- Navbar -->
 <header class="navbar">
   <div class="logo">
     <img src="logo.png">
     <div>
       <h2>FOAMAN</h2>
-      <p>Professional Car Care Products</p>
+      <small>Professional Car Care</small>
     </div>
   </div>
   <nav>
@@ -25,39 +28,37 @@
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- Hero -->
+<section class="hero reveal">
   <div class="hero-box">
-    <h1>Premium Car Wash & Detailing Products</h1>
-    <p>Trusted by professionals & car enthusiasts</p>
+    <h1>Premium Car Wash Products</h1>
+    <p>Trusted by professionals</p>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section id="products" class="section">
+<!-- Products -->
+<section id="products" class="section reveal">
 <h2>Our Products</h2>
 
 <div class="product-grid">
+  <div class="product-card" onclick="openProduct('Foam Shampoo','₹499','High foam deep cleaning')">
+    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c7">
+    <h3>Foam Shampoo</h3>
+  </div>
 
-<div class="product-card" onclick="openProduct('Foam Shampoo','₹499','High density foam for deep cleaning')">
-  <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c7">
-  <h3>Foam Shampoo</h3>
-</div>
+  <div class="product-card" onclick="openProduct('Interior Cleaner','₹699','Safe interior cleaner')">
+    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068">
+    <h3>Interior Cleaner</h3>
+  </div>
 
-<div class="product-card" onclick="openProduct('Interior Cleaner','₹699','Safe interior & dashboard cleaning')">
-  <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068">
-  <h3>Interior Cleaner</h3>
-</div>
-
-<div class="product-card" onclick="openProduct('Wax Polish','₹999','Long lasting shine & protection')">
-  <img src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e">
-  <h3>Wax Polish</h3>
-</div>
-
+  <div class="product-card" onclick="openProduct('Wax Polish','₹999','Long lasting shine')">
+    <img src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e">
+    <h3>Wax Polish</h3>
+  </div>
 </div>
 </section>
 
-<!-- PRODUCT MODAL -->
+<!-- Product Modal -->
 <div class="modal" id="productModal">
   <div class="modal-box">
     <span onclick="closeModal()">✖</span>
@@ -68,26 +69,15 @@
   </div>
 </div>
 
-<!-- REVIEWS -->
-<section id="reviews" class="section dark">
+<!-- Reviews -->
+<section id="reviews" class="section dark reveal">
 <h2>Customer Reviews</h2>
-
-<div class="review-box">
-  ⭐⭐⭐⭐⭐ <p>“Best foam shampoo I have ever used!”</p>
-  <span>– Rahul, Bangalore</span>
-</div>
-
-<div class="review-box">
-  ⭐⭐⭐⭐⭐ <p>“Professional quality products at fair price.”</p>
-  <span>– Arjun, Chennai</span>
-</div>
-
+<div class="review-box" id="reviewText"></div>
 </section>
 
-<!-- FOUNDERS -->
-<section id="founders" class="section">
+<!-- Founders -->
+<section id="founders" class="section reveal">
 <h2>Our Founders</h2>
-
 <div class="founder-grid">
   <div class="founder-card">
     <img src="https://randomuser.me/api/portraits/men/45.jpg">
@@ -95,7 +85,6 @@
     <p>Founder & CEO</p>
     <p>📞 +91 9XXXXXXXXX</p>
   </div>
-
   <div class="founder-card">
     <img src="https://randomuser.me/api/portraits/men/32.jpg">
     <h3>Prateek Kumar</h3>
@@ -105,23 +94,23 @@
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section dark">
+<!-- Enquiry -->
+<section id="contact" class="section dark reveal">
 <h2>Enquiry</h2>
-
 <form action="mailto:foamanofficial@gmail.com" method="post" enctype="text/plain">
   <input type="text" name="Name" placeholder="Your Name" required>
   <input type="email" name="Email" placeholder="Your Email" required>
   <textarea name="Message" placeholder="Your enquiry"></textarea>
-  <button type="submit">Send Enquiry</button>
+  <button type="submit">Send</button>
 </form>
 </section>
 
-<footer>
-© 2025 FOAMAN | Car Care Solutions
-</footer>
+<footer>© 2025 FOAMAN | All Rights Reserved</footer>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">💬</a>
+<button id="topBtn">⬆</button>
 
 <script src="script.js"></script>
 </body>
 </html>
-
