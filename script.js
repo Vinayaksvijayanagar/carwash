@@ -1,24 +1,46 @@
+window.addEventListener("scroll",()=>{
+ let st=document.documentElement.scrollTop;
+ let h=document.documentElement.scrollHeight - document.documentElement.clientHeight;
+ document.getElementById("progressBar").style.width=(st/h)*100+"%";
+});
+
+window.addEventListener("scroll",()=>{
+ document.querySelectorAll(".reveal").forEach(el=>{
+  if(el.getBoundingClientRect().top < window.innerHeight-100){
+    el.classList.add("active");
+  }
+ });
+});
+
 function openProduct(name, desc, imgs){
-  document.getElementById("mainImg").src = imgs[0];
-
-  const t = document.querySelectorAll(".thumbs img");
-  t[0].src = imgs[0];
-  t[1].src = imgs[1];
-
-  document.getElementById("pName").innerText = name;
-  document.getElementById("pDesc").innerText = desc;
-
-  document.getElementById("orderBtn").href =
-    `https://wa.me/91XXXXXXXXXX?text=I want to order ${name}`;
-
-  document.getElementById("modal").style.display = "flex";
+ modalImg.src = imgs[0];
+ const t=document.querySelectorAll(".thumbs img");
+ t[0].src=imgs[0];
+ t[1].src=imgs[1];
+ pName.innerText=name;
+ pDesc.innerText=desc;
+ orderBtn.href=`https://wa.me/91XXXXXXXXXX?text=I want to order ${name}`;
+ productModal.style.display="flex";
 }
 
-function swapImg(src){
-  document.getElementById("mainImg").src = src;
-}
+function changeImg(src){ modalImg.src=src }
+function closeModal(){ productModal.style.display="none" }
 
-function closeModal(){
-  document.getElementById("modal").style.display = "none";
-}
+const reviews=[
+"Excellent product quality!",
+"Professional car care results",
+"Highly recommended",
+"Best value for money"
+];
+let i=0;
+setInterval(()=>{
+ reviewText.innerHTML=`⭐⭐⭐⭐⭐<p>${reviews[i]}</p><span>– Verified Buyer</span>`;
+ i=(i+1)%reviews.length;
+},3000);
+
+const topBtn=document.getElementById("topBtn");
+window.addEventListener("scroll",()=>{
+ topBtn.style.display=window.scrollY>400?"block":"none";
+});
+topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
