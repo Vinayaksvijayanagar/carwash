@@ -43,4 +43,21 @@ window.addEventListener("scroll",()=>{
  topBtn.style.display=window.scrollY>400?"block":"none";
 });
 topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+const heroImages = [
+  "images/adv-1.png",
+  "images/adv-2.png",
+  "images/adv-3.png"
+];
+
+let heroIndex = 0;
+const hero = document.getElementById("hero");
+
+// initial background
+hero.style.backgroundImage = `url(${heroImages[0]})`;
+
+setInterval(() => {
+  heroIndex = (heroIndex + 1) % heroImages.length;
+  hero.style.backgroundImage = `url(${heroImages[heroIndex]})`;
+}, 4000); // change every 4 seconds
+
 
