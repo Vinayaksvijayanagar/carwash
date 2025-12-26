@@ -2,18 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FOAMAN Auto Care</title>
+<title>FOAMAN | Auto Care Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 class="title">FOAMAN Auto Care Products</h1>
+<div id="progressBar"></div>
 
-<section class="products">
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png">
+    <div>
+      <h2>FOAMAN</h2>
+      <small>Auto Care Products</small>
+    </div>
+  </div>
+</header>
+
+<section class="hero reveal">
+  <div class="hero-box">
+    <h1>Premium Car & Bike Care Products</h1>
+    <p>Professional quality for detailing experts</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section reveal">
+<h2>Our Products</h2>
+
+<div class="product-grid">
 
   <!-- Dash Shine Pro -->
-  <div class="card" onclick="openProduct(
+  <div class="product-card" onclick="openProduct(
     'Dash Shine Pro',
     'Car & Bike Dashboard Polish',
     ['images/dash-shine-1.png','images/dash-shine-2.png']
@@ -23,7 +44,7 @@
   </div>
 
   <!-- Thick & Slick Foam Shampoo -->
-  <div class="card" onclick="openProduct(
+  <div class="product-card" onclick="openProduct(
     'Thick & Slick Foam Shampoo',
     'Car & Bike Foam Shampoo',
     ['images/thick-slick-1.png','images/thick-slick-2.png']
@@ -33,7 +54,7 @@
   </div>
 
   <!-- All Purpose Degreaser -->
-  <div class="card" onclick="openProduct(
+  <div class="product-card" onclick="openProduct(
     'All Purpose Degreaser',
     'Car & Bike Cleaner & Degreaser',
     ['images/all-purpose-1.png','images/all-purpose-2.png']
@@ -43,7 +64,7 @@
   </div>
 
   <!-- Tyre Shine Pro -->
-  <div class="card" onclick="openProduct(
+  <div class="product-card" onclick="openProduct(
     'Tyre Shine Pro',
     'Car & Bike Tyre Shiner',
     ['images/tyre-shine-1.png','images/tyre-shine-2.png']
@@ -52,18 +73,19 @@
     <h3>Tyre Shine Pro</h3>
   </div>
 
+</div>
 </section>
 
-<!-- PRODUCT MODAL -->
-<div class="modal" id="modal">
+<!-- MODAL -->
+<div class="modal" id="productModal">
   <div class="modal-box">
-    <span class="close" onclick="closeModal()">✖</span>
+    <span onclick="closeModal()">✖</span>
 
-    <img id="mainImg">
+    <img id="modalImg" class="modal-img">
 
     <div class="thumbs">
-      <img onclick="swapImg(this.src)">
-      <img onclick="swapImg(this.src)">
+      <img onclick="changeImg(this.src)">
+      <img onclick="changeImg(this.src)">
     </div>
 
     <h2 id="pName"></h2>
@@ -72,6 +94,16 @@
     <a id="orderBtn" target="_blank">Order via WhatsApp</a>
   </div>
 </div>
+
+<section class="section dark reveal">
+<h2>Customer Reviews</h2>
+<div class="review-box" id="reviewText"></div>
+</section>
+
+<footer>© 2025 FOAMAN Auto Care</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">💬</a>
+<button id="topBtn">⬆</button>
 
 <script src="script.js"></script>
 </body>
