@@ -1,64 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>FOAMAN Auto Care</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>FOAMAN | Car Care Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-    <img src="logo.png" class="nav-logo" alt="FOAMAN Auto Care">
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#contact">Book</a></li>
-    </ul>
-</nav>
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png">
+    <div>
+      <h2>FOAMAN</h2>
+      <p>Professional Car Care Products</p>
+    </div>
+  </div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#founders">Founders</a>
+    <a href="#contact">Enquiry</a>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Premium Auto Care Products</h1>
-        <p>Professional car wash creams & detailing solutions</p>
-        <a href="#products" class="btn">View Portfolio</a>
-    </div>
-</section>
-
-<!-- SECTION TITLE -->
-<section class="section-title">
-    <h2>Our Signature Products</h2>
-    <p>Designed for professionals who care about perfection</p>
+<section class="hero">
+  <div class="hero-box">
+    <h1>Premium Car Wash & Detailing Products</h1>
+    <p>Trusted by professionals & car enthusiasts</p>
+  </div>
 </section>
 
 <!-- PRODUCTS -->
-<section class="products" id="products"></section>
+<section id="products" class="section">
+<h2>Our Products</h2>
 
-<!-- MODAL -->
-<div class="modal" id="productModal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <img id="modalImg" alt="">
-        <h2 id="modalTitle"></h2>
-        <p id="modalDesc"></p>
-        <span id="modalPrice"></span>
-    </div>
+<div class="product-grid">
+
+<div class="product-card" onclick="openProduct('Foam Shampoo','₹499','High density foam for deep cleaning')">
+  <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c7">
+  <h3>Foam Shampoo</h3>
 </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Book Your Service</h2>
-    <p>Quick booking via WhatsApp</p>
-    <a class="whatsapp-btn"
-       href="https://wa.me/91XXXXXXXXXX?text=I%20want%20FOAMAN%20Auto%20Care%20service"
-       target="_blank">
-        📲 Book on WhatsApp
-    </a>
+<div class="product-card" onclick="openProduct('Interior Cleaner','₹699','Safe interior & dashboard cleaning')">
+  <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068">
+  <h3>Interior Cleaner</h3>
+</div>
+
+<div class="product-card" onclick="openProduct('Wax Polish','₹999','Long lasting shine & protection')">
+  <img src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e">
+  <h3>Wax Polish</h3>
+</div>
+
+</div>
 </section>
 
-<footer>© 2025 FOAMAN Auto Care</footer>
+<!-- PRODUCT MODAL -->
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <span onclick="closeModal()">✖</span>
+    <h2 id="pName"></h2>
+    <p id="pDesc"></p>
+    <strong id="pPrice"></strong>
+    <a id="orderBtn" target="_blank">Order via WhatsApp</a>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews" class="section dark">
+<h2>Customer Reviews</h2>
+
+<div class="review-box">
+  ⭐⭐⭐⭐⭐ <p>“Best foam shampoo I have ever used!”</p>
+  <span>– Rahul, Bangalore</span>
+</div>
+
+<div class="review-box">
+  ⭐⭐⭐⭐⭐ <p>“Professional quality products at fair price.”</p>
+  <span>– Arjun, Chennai</span>
+</div>
+
+</section>
+
+<!-- FOUNDERS -->
+<section id="founders" class="section">
+<h2>Our Founders</h2>
+
+<div class="founder-grid">
+  <div class="founder-card">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg">
+    <h3>Vinayak S V</h3>
+    <p>Founder & CEO</p>
+    <p>📞 +91 9XXXXXXXXX</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg">
+    <h3>Prateek Kumar</h3>
+    <p>Operations Head</p>
+    <p>📞 +91 8XXXXXXXXX</p>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark">
+<h2>Enquiry</h2>
+
+<form action="mailto:foamanofficial@gmail.com" method="post" enctype="text/plain">
+  <input type="text" name="Name" placeholder="Your Name" required>
+  <input type="email" name="Email" placeholder="Your Email" required>
+  <textarea name="Message" placeholder="Your enquiry"></textarea>
+  <button type="submit">Send Enquiry</button>
+</form>
+</section>
+
+<footer>
+© 2025 FOAMAN | Car Care Solutions
+</footer>
 
 <script src="script.js"></script>
 </body>
